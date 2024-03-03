@@ -19,7 +19,7 @@ The Face Recognition Transaction System is designed to enhance security and conv
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/kashishsinghyadav/Face-Recogination-for-transaction-system
+    git clone https://github.com/kashishsinghyadav/Face-Recogination-for-online-transaction-.git
     ```
 
 2. Install the required dependencies:
