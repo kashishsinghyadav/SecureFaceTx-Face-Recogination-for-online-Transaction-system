@@ -9,3 +9,4 @@ urlpatterns = [
     path('',include('Face_Detection.urls'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+ 
