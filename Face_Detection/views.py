@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from Face_Detection.detection import FaceRecognition
 from .forms import *
 from django.contrib import messages
+from .models import UserProfile
+
 
 faceRecognition = FaceRecognition()
 
@@ -10,20 +12,32 @@ def home(request):
 
 
 def register(request):
-    if request.method == "POST":
-        form = ResgistrationForm(request.POST or None)
-        if form.is_valid():
-            form.save()
-            print("IN HERE")
-            messages.success(request,"SuceessFully registered")
-            addFace(request.POST['face_id'])
-            redirect('home')
-        else:
-            messages.error(request,"Account registered failed")
-    else:
-        form = ResgistrationForm()
+    try:
 
-    return render(request, 'faceDetection/register.html', {'form':form})
+        if request.method == "POST":
+            face_id = request.POST.get('face_id')
+            name = request.POST.get('name')
+            address = request.POST.get('address')
+            phone = request.POST.get('phone')
+            email = request.POST.get('email')
+            image = request.FILES.get('image')
+            user_profile = UserProfile(
+                face_id=face_id,
+                name=name,
+                address=address,
+                phone=phone,
+                email=email,
+                image=image
+            )
+            user_profile.save()
+            return redirect('login')
+
+
+    
+
+        return render(request, 'faceDetection/register.html')
+    except:
+        return render(request, 'faceDetection/register.html')
 
 def addFace(face_id):
     face_id = face_id
@@ -32,10 +46,15 @@ def addFace(face_id):
     return redirect('/')
 
 def login(request):
+    
+
     face_id = faceRecognition.recognizeFace()
     print(face_id)
     return redirect('greeting' ,str(face_id))
-
+    
+    
+    
+   
 def Greeting(request,face_id):
     face_id = int(face_id)
     context ={

@@ -8,10 +8,10 @@ class ResgistrationForm(forms.ModelForm):
             'face_id',
             'name',
             'address',
-            'job',
+            
             'phone',
             'email',
-            'bio',
+            
             'image'
 
         ]
