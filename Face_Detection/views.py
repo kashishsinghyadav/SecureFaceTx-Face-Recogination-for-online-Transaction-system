@@ -30,6 +30,7 @@ def register(request):
                 image=image
             )
             user_profile.save()
+            addFace(request.POST['face_id'])
             return redirect('login')
 
 
