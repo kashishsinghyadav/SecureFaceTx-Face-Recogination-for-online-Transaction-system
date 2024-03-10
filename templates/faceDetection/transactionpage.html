@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #000000; /* Black background */
+    }
+    .border {
+      color: #000000cc; /* Text color */
+      background-color: #FFFFFF; /* White background */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-xs-8 mx-auto">
+        <div class="border shadow my-4 p-5">
+          <div class="d-flex align-items-center justify-content-between">
+            <div><img src="/dbPay.jpg" alt="DB Pay logo" height="48"></div>
+            <div class="fs-4" style="font-family:impact"><strong><span class="text-secondary">$</span> FacePay.</strong></div>
+          </div>
+          <div  class="my-4">
+            <form action="{% url 'process_payment' %}" method="POST">     
+              {% csrf_token %}
+              <input type="radio" onchange="toggleForm('credit')" name="chargeType" id="creditCard" checked> <label  style="color: rgba(20, 40, 40, 0.8)" class="text-primary-green" for="creditCard" ><strong>Credit Card</strong></label>
+              <input class="ms-3" onchange="toggleForm('bank')" type="radio" name="chargeType" id="ach"> <label class="text-primary-green" style="color: rgba(20, 40, 40, 0.8)" for="ach"><strong>Bank ACH</strong></label>
+              <div id="formType"></div>
+              <button type="submit" class="mt-4 btn-primary btn btn-lg w-100" style="background-color: rgba(20, 40, 40, 0.8); color: #FFFFFF;">Proceed</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and custom script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    window.addEventListener('load',toggleForm('credit'));
+    function toggleForm(e){
+      document.getElementById('formType').innerHTML = e === 'credit' ? `<div class="form-floating mt-3">
+        <input id="nameOnCard" type="text" class="form-control" name="nameOnCard">
+        <label for="nameOnCard">Name On Card</label>
+      </div>
+      <div class="form-floating mt-3">
+        <input id="cardNumber" type="text" class="form-control" name="cardNumber">
+        <label for="cardNumber">Card Number</label>
+      </div>
+      <div class="row g-3">
+        <div class="col">
+          <div class="form-floating mt-3">
+            <input id="expiry_mm" type="text" class="form-control" name="expiry_mm">
+            <label for="expiry_mm">Expiry (mm)</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-floating mt-3">
+            <input id="cvv" type="text" class="form-control" name="cvv">
+            <label for="cvv">CVV</label>
+          </div>
+        </div>
+      </div>` : `<div class="form-floating mt-3">
+        <input id="accountHolder" type="text" class="form-control" name="accountHolder">
+        <label for="accountHolder">Name of Account Holder</label>
+      </div>
+      <div class="form-floating mt-3">
+        <input id="routing" type="text" class="form-control" name="routing">
+        <label for="routing">Routing Number</label>
+      </div>
+      <div class="form-floating mt-3">
+        <select name="accountType" id="accountType" class="form-control" name="accountType">
+          <option value="checking">Checking</option>
+          <option value="savings">Savings</option>
+        </select>
+        <label for="accountType">Account Type</label>
+      </div>`;
+    }
+  </script>
+</body>
+</html>

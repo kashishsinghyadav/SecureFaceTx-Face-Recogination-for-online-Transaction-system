@@ -412,13 +412,14 @@ footer {
 
           <ul class="nav_menu_list">
             <li class="nav_menu_item">
-              <a href="#" class="nav_menu_link">Account({{user.name}})</a>
+              <a href="{% url 'profile' user.face_id %}" class="nav_menu_link">Account ({{ user.name }})</a>
+
             </li>
             <li class="nav_menu_item">
               <a href="#" class="nav_menu_link">Your Transaction</a>
             </li>
             <li class="nav_menu_item">
-              <a href="#" class="nav_menu_link">Make Payment</a>
+              <a href="{%  url 'credit' user.face_id %}" class="nav_menu_link">Make Payment</a>
             </li>
             <li class="nav_menu_item">
               <a href="#" class="nav_menu_link">Settings</a>
@@ -446,11 +447,11 @@ footer {
             </p>
 
             <div class="btn_wrapper">
-              <button class="btn view_more_btn">
-                MakePay <i class="ri-arrow-right-line"></i>
+              <button   class="btn view_more_btn" >
+                <a class="btn view_more_btn"  href="{% url 'credit' user.face_id %}" >MakePay</a><i class="ri-arrow-right-line"></i>
               </button>
 
-              <!-- <button class="btn documentation_btn">documentation</button> -->
+             
             </div>
           </div>
           <div class="grid-item-2">

@@ -3,9 +3,24 @@ from Face_Detection.detection import FaceRecognition
 from .forms import *
 from django.contrib import messages
 from .models import UserProfile
+from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required  
 
 
 faceRecognition = FaceRecognition()
+
+def profile_view(request, face_id):
+    try:
+        face_id = int(face_id)
+        user_profile = {
+            'user': UserProfile.objects.get(face_id=face_id)
+        }
+    except UserProfile.DoesNotExist:
+        raise HttpResponse("UserProfile does not exist")
+    
+    return render(request, 'faceDetection/userpro.html', {'user_profile': user_profile})
+
+
 
 def home(request):
     return render(request,'faceDetection/home.html')
@@ -31,6 +46,7 @@ def register(request):
             )
             user_profile.save()
             addFace(request.POST['face_id'])
+
             return redirect('login')
 
 
@@ -45,10 +61,7 @@ def addFace(face_id):
     faceRecognition.faceDetect(face_id)
     faceRecognition.trainFace()
     return redirect('/')
-
 def login(request):
-    
-
     face_id = faceRecognition.recognizeFace()
     print(face_id)
     return redirect('greeting' ,str(face_id))
