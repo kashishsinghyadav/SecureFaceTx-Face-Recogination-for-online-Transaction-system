@@ -1,0 +1,5 @@
+Django>=3.0
+opencv-python
+dlib
+face_recognition
+keras>=2.0.0
