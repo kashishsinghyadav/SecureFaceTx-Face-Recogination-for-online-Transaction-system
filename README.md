@@ -2,7 +2,7 @@
 
 This project implements face recognition for a transaction system using Keras, OpenCV, data augmentation, and OTP verification with Django as the backend.
 
-
+# Flowchart
 ```mermaid
 graph TD;
     Start --> User_Registration --> Login_Face_Recognition --> Dashboard --> Transaction_Process --> End
