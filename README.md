@@ -82,3 +82,83 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For any inquiries or support, please contact [kashish ](mailto:kashishhsinghhh@gmail.com).
 
+
+## Project Srceenshot
+<details>
+<summary><strong>Screenshots (click to expand)</strong></summary>
+
+<!-- Add your screenshots here -->
+## Home Page
+
+![Screenshot 1](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/d59d1454-9b89-4c72-9c3d-17037ae3fc8d)
+
+## Registration Page
+    # user register themselves using credential
+    ``` 
+    faceid(unique),
+    Name,
+    email,
+    address,
+    Phone number,
+    uploadimage
+    ```
+![Screenshot (2)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/d0792921-275c-409e-b322-457de0ad799c)
+
+
+## Login 
+    # It done by the real time camera 
+
+
+## User Dashboard
+    # the specifc user dashboard which user login successfully
+
+
+![Screenshot (3)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/705dfdbf-0d4a-4ce4-ba12-d1a8ff0e65fe)
+
+ ## User details 
+    #  user also update thier details upload their image
+    
+![Screenshot (24)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/ce521f7e-f24f-4bd5-b3e8-02d1547333b4)
+
+
+## Transaction Page
+
+
+![Screenshot (20)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/9b8583b0-3812-413b-a94c-4d22173406bb)
+
+
+
+
+
+![Screenshot (21)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/5ba486cc-1fb3-4bc6-8173-df7b4e1da1f4)
+
+
+
+## OTP Page
+    # user enter the register email
+
+![Screenshot (18)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/9a30fc81-65e5-4efc-9ef4-a89da30815a9)
+
+## Verification Page
+    # user enter the otp(6 digits) which is send to mail
+
+
+
+![Screenshot (22)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/5bc2731c-930e-4497-8ddb-b878a2690457)
+
+
+## Successful Transaction
+    # if otp is authenticate then transaction became succesful
+
+![Screenshot (23)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/1ff6548c-81a5-43b9-8ea1-58eabf048230)
+
+
+
+
+
+<!-- Add more screenshots as needed -->
+
+
+</details>
+
+
