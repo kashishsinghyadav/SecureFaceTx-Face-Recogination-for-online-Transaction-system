@@ -1,21 +1,4 @@
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-</head>
-<body>
-    <h1>User Profile</h1>
-    <div>
-        <p><strong>Face ID:</strong> {{ user_profile.user.face_id }}</p>
-        <p><strong>Name:</strong> {{ user_profile.user.name }}</p>
-        <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
-        <p><strong>Address:</strong> {{ user_profile.user.address }}</p>
-        <p><strong>Phone Number:</strong> {{ user_profile.user.phone_number }}</p>
-    </div>
-</body>
-</html> {% endcomment %}
+
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -27,8 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <style>
+       
         body {
-            background: -webkit-linear-gradient(left,  #036168,black);
+            background:  url('/profile_image/otpbg.jpeg')  no-repeat fixed center;
+            background-size: cover;
         }
         .emp-profile {
             padding: 3%;
@@ -165,11 +150,11 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="profile-work">
-                                <h2 style="color:#036168;">Account</h2>
+                                {% comment %} <h2 style="color:#036168;">Account</h2>
                                 <a href=""><h4>{{ user_profile.user.name }}</h4></a>
                                 <a href=""><h4>{{ user_profile.user.email }}</h4></a>
-                                <a href=""><h4>{{ user_profile.user.phone_number }}</h4></a>
-                                <a href=""><h4>{{ user_profile.user.address }}</h4></a>
+                                <a href=""><h4>{{ user_profile.user.phone }}</h4></a>
+                                <a href=""><h4>{{ user_profile.user.address }}</h4></a> {% endcomment %}
 
 
                                 {% comment %} <p>SKILLS</p>
@@ -212,7 +197,7 @@
                                                     <label>Phone</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>{{ user_profile.user.phone_number }}</p>
+                                                    <p>{{ user_profile.user.phone }}</p>
                                                 </div>
                                             </div>
                                            <div style="color:#036168;" class="row">
