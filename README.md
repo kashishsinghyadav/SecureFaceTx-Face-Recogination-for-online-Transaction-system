@@ -2,6 +2,26 @@
 
 This project implements face recognition for a transaction system using Keras, OpenCV, data augmentation, and OTP verification with Django as the backend.
 
+
+```mermaid
+graph TD;
+    Start --> User_Registration --> Login_Face_Recognition --> Dashboard --> Transaction_Process --> End
+    User_Registration --> |Registration Successful| Authentication;
+    Authentication --> |Successful| Update;
+    Update --> |Transaction Successful| End;
+    Login_Face_Recognition --> |Login Successful| Dashboard;
+    Login_Face_Recognition --> |Login Failed| User_Registration;
+    Dashboard --> |New Transaction| Transaction_Process;
+    Transaction_Process --> |Redirect to OTP Verification| OTP_Verification;
+    OTP_Verification --> |Successful| Transaction_Process;
+    OTP_Verification --> |Failed| End;
+    User_Registration --> |Login Failed| End;
+    Dashboard --> |Login Failed| User_Registration;
+    Transaction_Process --> |Failed| End;
+    OTP_Verification --> |Redirect to Login| User_Registration;
+    OTP_Verification --> |Redirect to Transaction| Transaction_Process;
+```
+
 ## Overview
 
 The Face Recognition Transaction System is designed to enhance security and convenience in financial transactions by implementing a face recognition system. This system verifies the identity of users through their facial features and integrates OTP (One Time Password) verification for additional security.
