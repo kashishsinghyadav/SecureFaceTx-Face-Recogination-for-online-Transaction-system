@@ -9,6 +9,7 @@ urlpatterns = [
     path('',include('Face_Detection.urls')),
     path('',include('Bank_Detail.urls')),
     path('',include('Otp_Auth.urls')),
+    path('',include('payments.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make Payment</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('/profile_image/otpbg.jpeg') no-repeat center center fixed; /* Specify the path to your image */
+            background-size: cover; /* Ensure the image covers the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease-in-out; /* Background color transition */
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to make text readable */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+
+        h1 { 
+            text-align: center;
+            margin-bottom: 20px;
+            color: #110d10;
+        }
+ 
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #0abbe7;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #47d1e9;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5de1f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Make Payment</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required>
+            </div>
+            <button type="submit">Pay</button>
+        </form>
+    </div>
+</body>
+</html>

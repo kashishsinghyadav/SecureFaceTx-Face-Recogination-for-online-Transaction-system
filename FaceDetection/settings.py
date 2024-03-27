@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Bank_Detail',
     'Otp_Auth',
     'django_otp',
+    'payments',
 
 ]
 
@@ -131,6 +132,9 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True  
 EMAIL_HOST_USER = 'kashishsinghy@gmail.com'  
 EMAIL_HOST_PASSWORD = 'fnan mhfh dmtc ubdh'  
+
+RAZORPAY_KEY_ID = 'rzp_test_l97ltcBS6CidAN'
+RAZORPAY_KEY_SECRET = 'DLxhABmLnCYgmMfMzae3iAdS'
 
 
 

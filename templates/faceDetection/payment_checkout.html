@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Checkout</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('/profile_image/otpbg.jpeg') no-repeat center center fixed; /* Specify the path to your image */
+            background-size: cover; /* Ensure the image covers the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease-in-out; /* Background color transition */
+        }
+
+        .payment-form-container {
+            width: 400px;
+            padding: 20px;
+            background-color:rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:#0abbe7;;
+        }
+
+        .payment-form-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color:#47d1e9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .payment-form-container button:hover {
+            background-color: #5de1f3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="payment-form-container">
+        <h1>Payment Checkout</h1>
+        <form id="payment-form" action="{% url 'payment_success' %}" method="POST">
+            {% csrf_token %}
+            <script src="https://checkout.razorpay.com/v1/checkout.js"
+                    data-key="{{ settings.RAZORPAY_KEY_ID }}"
+                    data-amount="{{ order.amount }}"
+                    data-currency="INR"
+                    data-order_id="{{ order.id }}"
+                    data-name="Your Company Name"
+                    data-description="Payment for your services"
+                    data-image="https://your-company-logo-url.com/your_logo.png"
+                    data-prefill.name="{{ order.name }}"
+                    data-prefill.email="example@example.com"
+                    data-theme.color="#F37254"
+            ></script>
+            <button type="button" onclick="handlePayment()">Pay with Razorpay</button>
+        </form>
+    </div>
+
+    <script>
+        function handlePayment() {
+            var options = {
+                "key": "{{ settings.RAZORPAY_KEY_ID }}",
+                "amount": {{ order.amount }},
+                "currency": "INR",
+                "name": "Your Company Name",
+                "description": "Payment for your services",
+                "image": "https://your-company-logo-url.com/your_logo.png",
+                "order_id": "{{ order.id }}",
+                "handler": function (response) {
+                    // Redirect to payment success page after successful payment
+                    window.location.href = "{% url 'payment_success' %}";
+                },
+                "prefill": {
+                    "name": "{{ order.name }}",
+                    "email": "example@example.com"
+                },
+                "theme": {
+                    "color": "#F37254"
+                }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        }
+    </script>
+</body>
+</html>
