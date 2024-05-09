@@ -131,7 +131,24 @@ step 5:
 
 The Face Recognition Transaction System is designed to enhance security and convenience in financial transactions by implementing a face recognition system. This system verifies the identity of users through their facial features and integrates OTP (One Time Password) verification for additional security.
 
-## Features
+## Architecture of the face recognition model using a Convolutional Neural Network (CNN)
+    
+```mermaid
+    graph LR
+    A[Input Layer] --> B[Convolutional Layer]
+    B --> C[Pooling Layer]
+    C --> D[Convolutional Layer]
+    D --> E[Pooling Layer]
+    E --> F[Convolutional Layer]
+    F --> G[Pooling Layer]
+    G --> H[Flattening Layer]
+    H --> I[Fully Connected Layer]
+    I --> J[Dropout Layer]
+    J --> K[Fully Connected Layer]
+    K --> L[Output Layer]
+
+```
+
 
 ## Features
 
