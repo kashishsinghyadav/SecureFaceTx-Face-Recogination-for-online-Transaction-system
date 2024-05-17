@@ -5,4 +5,4 @@ Pillow==9.5.0
 opencv-python==4.5.5.64
 
 dlib==19.24.0
-numpy==1.21.6
+numpy >=1.21.0,<2.0.0
