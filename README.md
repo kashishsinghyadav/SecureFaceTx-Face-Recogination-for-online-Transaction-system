@@ -52,9 +52,8 @@ graph TD;
 
 
 
+![Screenshot (70)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/3137293b-a741-4660-98eb-1c7aa61da910)
 
-    
-![Screenshot (26)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/18f6b776-7339-4c91-ae82-3b37e56033ef)
 
 
 ## User Dashboard
