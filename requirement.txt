@@ -1,4 +1,8 @@
-pip install django
-pip3 opencv-python==3.4.2.17
-gunicorn
+Django==4.2
+gunicorn==20.1.0
 
+Pillow==9.5.0
+opencv-python==4.5.5.64
+
+dlib==19.24.0
+numpy==1.21.6
