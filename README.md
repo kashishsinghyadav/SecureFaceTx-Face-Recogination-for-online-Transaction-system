@@ -1,6 +1,8 @@
 # Face Recognition Transaction System
 
-This project implements face recognition for a transaction system using Keras, OpenCV, data augmentation, and OTP verification with Django as the backend.
+## Project Description
+
+This project implements an online transaction system with face recognition using Keras and OpenCV, along with data augmentation techniques for enhanced model performance. It incorporates Razorpay as the payment gateway for secure transactions and OTP verification. Django serves as the backend framework.
 
 # Flowchart
 ```mermaid
@@ -21,6 +23,7 @@ graph TD;
     OTP_Verification --> |Redirect to Login| User_Registration;
     OTP_Verification --> |Redirect to Transaction| Transaction_Process;
 ```
+
 
 ## Project Srceenshot
 <details>
@@ -66,16 +69,34 @@ graph TD;
 ![Screenshot (24)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/ce521f7e-f24f-4bd5-b3e8-02d1547333b4)
 
 
-## Transaction Page
+## Transaction Page 
+Intergrate Razorpay  Payment gateway 
+
+step 1:
+    
+![Screenshot (34)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/e690641d-80f7-40c2-8d80-3557785cb477)
+
+step 2:
 
 
-![Screenshot (20)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/9b8583b0-3812-413b-a94c-4d22173406bb)
+![Screenshot (36)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/30fca85a-ac8d-45cc-8829-cfea38d40ea3)
+
+step3 3:
+    
+
+![Screenshot (37)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/1938bd24-d1d0-45ff-9858-ec0b62b14593)
+
+
+step 4:
 
 
 
+![Screenshot (38)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/5e850a43-d996-45ea-8e01-7a1b78020a41)
 
 
-![Screenshot (21)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/5ba486cc-1fb3-4bc6-8173-df7b4e1da1f4)
+step 5:
+     
+![Screenshot (39)](https://github.com/kashishsinghyadav/SecureFaceTx-Face-Recogination-for-online-Transaction-system/assets/117498422/d82a44b3-fa65-4192-94de-2f3a4337d84e)
 
 
 
@@ -110,13 +131,34 @@ graph TD;
 
 The Face Recognition Transaction System is designed to enhance security and convenience in financial transactions by implementing a face recognition system. This system verifies the identity of users through their facial features and integrates OTP (One Time Password) verification for additional security.
 
+## Architecture of the face recognition model using a Convolutional Neural Network (CNN)
+    
+```mermaid
+    graph LR
+    A[Input Layer] --> B[Convolutional Layer]
+    B --> C[Pooling Layer]
+    C --> D[Convolutional Layer]
+    D --> E[Pooling Layer]
+    E --> F[Convolutional Layer]
+    F --> G[Pooling Layer]
+    G --> H[Flattening Layer]
+    H --> I[Fully Connected Layer]
+    I --> J[Dropout Layer]
+    J --> K[Fully Connected Layer]
+    K --> L[Output Layer]
+
+```
+
+
 ## Features
 
 - Face recognition using Keras and OpenCV.
 - Data augmentation techniques for improving model performance.
 - OTP verification for secure transactions.
 - User-friendly interface for seamless interaction.
-- User perform curd operations to manage their profile
+- CRUD operations to manage user profiles.
+- Integration of Razorpay payment gateway for secure transactions.
+
 
 ## Installation
 
