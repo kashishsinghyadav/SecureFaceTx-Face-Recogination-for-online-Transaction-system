@@ -4,6 +4,6 @@ cmake
 Pillow==9.5.0
 opencv-python==4.5.5.64
 
-dlib==19.24.1
+dlib
 
 numpy >=1.21.0,<2.0.0
