@@ -1,6 +1,6 @@
 Django==4.2
 gunicorn==20.1.0
-
+cmake
 Pillow==9.5.0
 opencv-python==4.5.5.64
 
