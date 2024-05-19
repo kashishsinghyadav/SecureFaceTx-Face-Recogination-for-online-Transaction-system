@@ -1,6 +1,6 @@
 # Face Recognition Transaction System
 
-## Project Description
+## Project Description 
 
 This project implements an online transaction system with face recognition using Keras and OpenCV, along with data augmentation techniques for enhanced model performance. It incorporates Razorpay as the payment gateway for secure transactions and OTP verification. Django serves as the backend framework.
 
